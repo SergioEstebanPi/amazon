@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { EstacionesRoutingModule } from './estaciones-routing.module';
+import { ClientesRoutingModule } from './clientes-routing.module';
 import { CreateComponent } from './create/create.component';
 import { EditComponent } from './edit/edit.component';
 import { GetComponent } from './get/get.component';
@@ -15,7 +15,7 @@ import { GetComponent } from './get/get.component';
   ],
   imports: [
     CommonModule,
-    EstacionesRoutingModule
+    ClientesRoutingModule
   ]
 })
-export class EstacionesModule { }
+export class ClientesModule { }

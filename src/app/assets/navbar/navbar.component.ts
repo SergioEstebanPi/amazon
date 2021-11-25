@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { UsuarioModelo } from 'src/app/modelos/usuario.model';
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
+  activeSession:boolean = false;
+  subs: Subscription = new Subscription();
+
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
 }
