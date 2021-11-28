@@ -32,6 +32,8 @@ export class LoginComponent implements OnInit {
  
     this.seguridadService.login(usuario, claveCifrada).subscribe(
       (data: any) => {
+        console.log("Usuario atenticado correctamente")
+        alert("Usuario atenticado correctamente")
         this.seguridadService.almacenarSesion(data)
         this.router.navigate(['/index']);
       },
