@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { UsuarioModelo } from 'src/app/modelos/usuario.model';
+import { SeguridadService } from 'src/app/servicios/seguridad.service';
 
 @Component({
   selector: 'app-navbar',
@@ -12,10 +13,13 @@ export class NavbarComponent implements OnInit {
   activeSession:boolean = false;
   subs: Subscription = new Subscription();
 
-  constructor() { }
+  constructor(private seguridadService: SeguridadService) { }
 
   ngOnInit(): void {
-
+    this.subs = this.seguridadService.datosUsuarioSesion().subscribe((data: UsuarioModelo) => {
+      console.log(data)
+        this.activeSession = data.isLoggedIn;
+    })
   }
 
 }
