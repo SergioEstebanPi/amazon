@@ -6,7 +6,7 @@
         <li *ngIf="activeSession"><a routerLink="/clientes">Clientes</a></li>
         <li *ngIf="activeSession"><a routerLink="/servicios">Servicios</a></li>
         <li *ngIf="activeSession"><a routerLink="/admin/get">Usuarios</a></li>
-        <li *ngIf="activeSession"><a routerLink="/admin/create">Registrar Usuario</a></li>
+        <li *ngIf="!activeSession"><a routerLink="/admin/create">Registrar Usuario</a></li>
          <!-- Sesion -->
         <li *ngIf="!activeSession"><a routerLink="/seguridad/login">Login</a></li>
         <li *ngIf="activeSession"><a routerLink="/seguridad/logout">Cerrar Sesion</a></li>
