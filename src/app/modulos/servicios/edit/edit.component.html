@@ -3,31 +3,32 @@
    
     <form [formGroup]="fgValidacion" class="col s12" (ngSubmit)="edit()">
         <input formControlName="id" type="hidden" class="validate">
+        
         <div class="row">
             <div class="input-field col s12">
                 <b>Cliente origen:</b>
-                <select class="browser-default" formControlName="origen" name="origen">
+                <select class="browser-default" formControlName="origen">
                     <option value="" disabled selected>Seleccione el cliente origen</option>
-                    <option *ngFor="let cliente of listadoClientes" value="{{cliente.nombre}} - {{cliente.apellidos}}">{{cliente.nombre}} - {{cliente.apellidos}}</option>
+                    <option *ngFor="let cliente of listadoClientes" value="{{cliente.cedula}} - {{cliente.apellidos}} {{cliente.nombre}}">{{cliente.cedula}} - {{cliente.apellidos}} {{cliente.nombre}}</option>
                 </select>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
                 <b>Cliente destino:</b>
-                <select class="browser-default" formControlName="destino" name="destino">
+                <select class="browser-default" formControlName="destino" >
                     <option value="" disabled selected>Seleccione el cliente destino</option>
-                    <option *ngFor="let cliente of listadoClientes" value="{{cliente.nombre}} - {{cliente.apellidos}}">{{cliente.nombre}} - {{cliente.apellidos}}</option>
+                    <option *ngFor="let cliente of listadoClientes" value="{{cliente.cedula}} - {{cliente.apellidos}} {{cliente.nombre}}">{{cliente.cedula}} - {{cliente.apellidos}} {{cliente.nombre}}</option>
                 </select>
             </div>
         </div>
-        
+
         <div class="row">
             <div class="input-field col s12">
                 <b>Encomienda:</b>
                 <select class="browser-default" formControlName="encomienda" >
                     <option value="" disabled selected>Seleccione la Encomienda</option>
-                    <option *ngFor="let encomienda of listadoEncomiendas" value="{{encomienda.nombre}} - {{encomienda.apellidos}}">{{encomienda.nombre}} - {{encomienda.apellidos}}</option>
+                    <option *ngFor="let encomienda of listadoEncomiendas" value="{{encomienda.descripcion}} - {{encomienda.peso}} - {{encomienda.presentacion}}">{{encomienda.descripcion}} - {{encomienda.peso}} - {{encomienda.presentacion}}</option>
                 </select>
             </div>
         </div>
