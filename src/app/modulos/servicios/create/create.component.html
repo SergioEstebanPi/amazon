@@ -1,21 +1,10 @@
 <div class="container">
     <h3 class="center-align">Registrar servicio</h3>
-    <form class="col s12">
-        <div class="row">
-            <div class="input-field col s12">
-                <b>Presentación:</b>
-                <select class="browser-default">
-                    <option value="" disabled selected>Seleccione la presentacion</option>
-                    <option value="caja">Caja</option>
-                    <option value="bolsa">Bolsa</option>
-                    <option value="sobre">Sobre</option>
-                </select>
-            </div>
-        </div>
+    <form [formGroup]="fgValidacion" class="col s12" (ngSubmit)="store()">
         <div class="row">
             <div class="input-field col s12">
                 <b>Cliente origen:</b>
-                <select class="browser-default" formControlName="origen" >
+                <select class="browser-default" formControlName="origen">
                     <option value="" disabled selected>Seleccione el cliente origen</option>
                     <option *ngFor="let cliente of listadoClientes" value="{{cliente.nombre}} - {{cliente.apellidos}}">{{cliente.nombre}} - {{cliente.apellidos}}</option>
                 </select>
@@ -40,9 +29,16 @@
                 </select>
             </div>
         </div>
+
+        <div class="row">
+            <div class="input-field col s12">
+                <input formControlName="valor" type="number" class="validate">
+                <label for="valor" style="width:auto">Valor</label>
+            </div>
+        </div>
    
         <div class="row center-align">
-            <button class="btn waves-effect waves-light" type="submit" name="action">Guardar
+            <button [disabled]="!fgValidacion.valid" class="btn waves-effect waves-light" type="submit" name="action">Guardar
                 <i class="material-icons right">send</i>
             </button>
         </div>
