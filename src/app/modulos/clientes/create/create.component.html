@@ -1,1 +1,74 @@
-<p>create works!</p>
+<div class="container">
+    <h3 class="center-align">Registrar cliente</h3>
+    <form [formGroup]="fgValidacion" class="col s12" (ngSubmit)="store()">
+
+        <div class="row">
+            <div class="input-field col s12">
+                <input formControlName="cedula" type="text" class="validate">
+                <label for="cedula" style="width:auto">Cedula</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s12">
+                <input formControlName="nombre" type="text" class="validate">
+                <label for="nombre" style="width:auto">Nombre</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s12">
+                <input formControlName="apellidos" type="text" class="validate">
+                <label for="apellidos" style="width:auto">Apellidos</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s12">
+                <input formControlName="pais" type="text" class="validate">
+                <label for="pais" style="width:auto">Pais</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s12">
+                <input formControlName="ciudad" type="text" class="validate">
+                <label for="ciudad" style="width:auto">Ciudad</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s12">
+                <input formControlName="departamento" type="text" class="validate">
+                <label for="departamento" style="width:auto">Departamento</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s12">
+                <input formControlName="direccion" type="text" class="validate">
+                <label for="direccion" style="width:auto">Direccion</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s12">
+                <input formControlName="telefono" type="text" class="validate">
+                <label for="telefono" style="width:auto">Telefono</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s12">
+                <input formControlName="email" type="text" class="validate">
+                <label for="email" style="width:auto">Email</label>
+            </div>
+        </div>
+   
+        <div class="row center-align">
+            <button [disabled]="!fgValidacion.valid" class="btn waves-effect waves-light" type="submit" name="action">Guardar
+                <i class="material-icons right">send</i>
+            </button>
+        </div>
+    </form>
+</div>
