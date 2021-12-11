@@ -32,6 +32,7 @@ export class CreateComponent implements OnInit {
     usuario.apellidos = this.fgValidacion.controls["apellidos"].value;
     usuario.correo = this.fgValidacion.controls["correo"].value;
     usuario.telefono = this.fgValidacion.controls["telefono"].value;
+    // usuario.fecha = new Date(this.fgValidacion.controls["fecha"].value);
  
     this.usuarioService.store(usuario).subscribe((data: UsuarioModelo)=> {
       Swal.fire('Creado correctamente!', '', 'success')

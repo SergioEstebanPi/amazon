@@ -1,1 +1,50 @@
-<p>create works!</p>
+<div class="container">
+    <h3 class="center-align">Registrar servicio</h3>
+    <form class="col s12">
+        <div class="row">
+            <div class="input-field col s12">
+                <b>Presentación:</b>
+                <select class="browser-default">
+                    <option value="" disabled selected>Seleccione la presentacion</option>
+                    <option value="caja">Caja</option>
+                    <option value="bolsa">Bolsa</option>
+                    <option value="sobre">Sobre</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <b>Cliente origen:</b>
+                <select class="browser-default" formControlName="origen" >
+                    <option value="" disabled selected>Seleccione el cliente origen</option>
+                    <option *ngFor="let cliente of listadoClientes" value="{{cliente.nombre}} - {{cliente.apellidos}}">{{cliente.nombre}} - {{cliente.apellidos}}</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <b>Cliente destino:</b>
+                <select class="browser-default" formControlName="destino" >
+                    <option value="" disabled selected>Seleccione el cliente destino</option>
+                    <option *ngFor="let cliente of listadoClientes" value="{{cliente.nombre}} - {{cliente.apellidos}}">{{cliente.nombre}} - {{cliente.apellidos}}</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="input-field col s12">
+                <b>Encomienda:</b>
+                <select class="browser-default" formControlName="encomienda" >
+                    <option value="" disabled selected>Seleccione la Encomienda</option>
+                    <option *ngFor="let encomienda of listadoEncomiendas" value="{{encomienda.nombre}} - {{encomienda.apellidos}}">{{encomienda.nombre}} - {{encomienda.apellidos}}</option>
+                </select>
+            </div>
+        </div>
+   
+        <div class="row center-align">
+            <button class="btn waves-effect waves-light" type="submit" name="action">Guardar
+                <i class="material-icons right">send</i>
+            </button>
+        </div>
+    </form>
+</div>
