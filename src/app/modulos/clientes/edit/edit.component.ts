@@ -13,6 +13,7 @@ import Swal from 'sweetalert2';
 export class EditComponent implements OnInit {
 
   fgValidacion = this.fb.group({
+    id: ['', [Validators.required]],
     cedula: ['', [Validators.required]],
     nombre: ['', [Validators.required]],
     apellidos: ['', [Validators.required]],
@@ -21,7 +22,7 @@ export class EditComponent implements OnInit {
     departamento: ['', [Validators.required]],
     direccion: ['', [Validators.required]],
     telefono: ['', [Validators.required]],
-    email: ['', [Validators.required], [Validators.email]]
+    email: ['', [Validators.required, Validators.email]]
   });
 
   id: string=''
