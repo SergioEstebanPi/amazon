@@ -37,13 +37,13 @@ export class LoginComponent implements OnInit {
         //alert("Usuario autenticado correctamente")
         this.seguridadService.almacenarSesion(data)
         Swal.fire({
-          position: 'top-end',
+          position: 'top',
           icon: 'success',
           title: 'Bienvenido',
           showConfirmButton: false,
           timer: 1500
         }).then(() =>{
-          this.router.navigate(['/index']);
+          this.router.navigate(['/servicios/get']);
         })
       },
       (error: any) => {
